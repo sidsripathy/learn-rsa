@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, rgba(106, 213, 255, 0.4), rgba(255, 106, 213, 0.3));
+  border-radius: 1.25rem;
+  padding: 1px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 106, 213, 0.6), rgba(106, 213, 255, 0.6));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.gradient-border > .content {
+  position: relative;
+  border-radius: inherit;
+  background: rgba(9, 0, 20, 0.85);
+}
+
+.card-glow {
+  box-shadow: 0 0 30px rgba(106, 213, 255, 0.18);
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-left: 2.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2rem;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6ad5, #6ad5ff);
+}
+
+.neon-tag {
+  border: 1px solid rgba(255, 230, 106, 0.6);
+  background: rgba(255, 230, 106, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffe66a;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(255, 106, 213, 0.7), rgba(106, 213, 255, 0.7));
+  border-radius: 9999px;
+}
