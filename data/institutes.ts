@@ -1,180 +1,205 @@
 import { Institute, Person, Team } from './types';
 
-const baseInstitutes: Array<Pick<Institute, 'name' | 'shortName' | 'slug' | 'region' | 'summary'>> = [
+const baseInstitutes: Array<Pick<Institute, 'name' | 'shortName' | 'slug' | 'region' | 'summary' | 'coordinates'>> = [
   {
     name: 'Indian Institute of Information Technology Manipur',
     shortName: 'IIIT Manipur',
     slug: 'iiit-manipur',
     region: 'Imphal, Manipur',
-    summary: 'Leading the eastern corridor with research in adaptive edge AI and resilient communication systems.'
+    summary: 'Leading the eastern corridor with research in adaptive edge AI and resilient communication systems.',
+    coordinates: { lat: 24.817, lng: 93.9368 }
   },
   {
     name: 'Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior',
     shortName: 'IIIT Gwalior',
     slug: 'iiit-gwalior',
     region: 'Gwalior, Madhya Pradesh',
-    summary: 'Pioneering cross-disciplinary innovation blending management, design, and high performance computing.'
+    summary: 'Pioneering cross-disciplinary innovation blending management, design, and high performance computing.',
+    coordinates: { lat: 26.2183, lng: 78.1828 }
   },
   {
     name: 'Indian Institute of Information Technology Dharwad',
     shortName: 'IIIT Dharwad',
     slug: 'iiit-dharwad',
     region: 'Dharwad, Karnataka',
-    summary: 'Driving western cluster smart mobility initiatives with deep learning and IoT telemetry expertise.'
+    summary: 'Driving western cluster smart mobility initiatives with deep learning and IoT telemetry expertise.',
+    coordinates: { lat: 15.4589, lng: 75.0078 }
   },
   {
     name: 'Indian Institute of Information Technology Una',
     shortName: 'IIIT Una',
     slug: 'iiit-una',
     region: 'Una, Himachal Pradesh',
-    summary: 'Focused on sustainable systems and quantum inspired optimisation for mountainous terrains.'
+    summary: 'Focused on sustainable systems and quantum inspired optimisation for mountainous terrains.',
+    coordinates: { lat: 31.4649, lng: 76.2708 }
   },
   {
     name: 'Dr. Shyama Prasad Mukherjee International Institute of Information Technology, Naya Raipur',
     shortName: 'IIIT Naya Raipur',
     slug: 'iiit-naya-raipur',
     region: 'Naya Raipur, Chhattisgarh',
-    summary: 'Synthesising tribal wisdom and modern design systems for inclusive digital experiences.'
+    summary: 'Synthesising tribal wisdom and modern design systems for inclusive digital experiences.',
+    coordinates: { lat: 21.195, lng: 81.7398 }
   },
   {
     name: 'Indian Institute of Information Technology, Design and Manufacturing, Kancheepuram',
     shortName: 'IIITDM Kancheepuram',
     slug: 'iiitdm-kancheepuram',
     region: 'Chennai, Tamil Nadu',
-    summary: 'Where cyber-physical systems meet industrial design for next-gen manufacturing intelligence.'
+    summary: 'Where cyber-physical systems meet industrial design for next-gen manufacturing intelligence.',
+    coordinates: { lat: 12.8239, lng: 80.045 }
   },
   {
     name: 'Indraprastha Institute of Information Technology Delhi',
     shortName: 'IIIT Delhi',
     slug: 'iiit-delhi',
     region: 'New Delhi, Delhi',
-    summary: 'Redefining urban life with human-centered computing and large-scale data narratives.'
+    summary: 'Redefining urban life with human-centered computing and large-scale data narratives.',
+    coordinates: { lat: 28.7041, lng: 77.1025 }
   },
   {
     name: 'Indian Institute of Information Technology Ranchi',
     shortName: 'IIIT Ranchi',
     slug: 'iiit-ranchi',
     region: 'Ranchi, Jharkhand',
-    summary: 'Building resilient rural-tech bridges with cloud-native platforms and sensing networks.'
+    summary: 'Building resilient rural-tech bridges with cloud-native platforms and sensing networks.',
+    coordinates: { lat: 23.3441, lng: 85.3096 }
   },
   {
     name: 'Indian Institute of Information Technology Nagpur',
     shortName: 'IIIT Nagpur',
     slug: 'iiit-nagpur',
     region: 'Nagpur, Maharashtra',
-    summary: 'Known for bio-inspired algorithms and ambient computing for citizen services.'
+    summary: 'Known for bio-inspired algorithms and ambient computing for citizen services.',
+    coordinates: { lat: 21.1458, lng: 79.0882 }
   },
   {
     name: 'Indian Institute of Information Technology Vadodara - International Campus Diu',
     shortName: 'IIIT Vadodara - ICD',
     slug: 'iiit-vadodara-icd',
     region: 'Diu, Daman and Diu',
-    summary: 'Experimenting with autonomous systems tuned for coastal smart-city deployments.'
+    summary: 'Experimenting with autonomous systems tuned for coastal smart-city deployments.',
+    coordinates: { lat: 20.714, lng: 70.987 }
   },
   {
     name: 'Indian Institute of Information Technology Design and Manufacturing, Kurnool',
     shortName: 'IIITDM Kurnool',
     slug: 'iiitdm-kurnool',
     region: 'Kurnool, Andhra Pradesh',
-    summary: 'Specialising in intelligent robotics, additive manufacturing, and rapid prototyping.'
+    summary: 'Specialising in intelligent robotics, additive manufacturing, and rapid prototyping.',
+    coordinates: { lat: 15.8281, lng: 78.0373 }
   },
   {
     name: 'Indian Institute of Information Technology Kalyani',
     shortName: 'IIIT Kalyani',
     slug: 'iiit-kalyani',
     region: 'Kalyani, West Bengal',
-    summary: 'Transforming agritech with edge inferencing and federated learning pipelines.'
+    summary: 'Transforming agritech with edge inferencing and federated learning pipelines.',
+    coordinates: { lat: 22.975, lng: 88.4343 }
   },
   {
     name: 'International Institute of Information Technology, Bhubaneswar',
     shortName: 'IIIT Bhubaneswar',
     slug: 'iiit-bhubaneswar',
     region: 'Bhubaneswar, Odisha',
-    summary: 'Crafting resilient civic-tech infrastructure for monsoon-intensive cities.'
+    summary: 'Crafting resilient civic-tech infrastructure for monsoon-intensive cities.',
+    coordinates: { lat: 20.2961, lng: 85.8245 }
   },
   {
     name: 'Indian Institute of Information Technology Tiruchirappalli',
     shortName: 'IIIT Tiruchirappalli',
     slug: 'iiit-tiruchirappalli',
     region: 'Tiruchirappalli, Tamil Nadu',
-    summary: 'Blending cultural heritage with AI-driven tourism and logistics experiences.'
+    summary: 'Blending cultural heritage with AI-driven tourism and logistics experiences.',
+    coordinates: { lat: 10.7905, lng: 78.7047 }
   },
   {
     name: 'Indian Institute of Information Technology Raichur',
     shortName: 'IIIT Raichur',
     slug: 'iiit-raichur',
     region: 'Raichur, Karnataka',
-    summary: 'Accelerating smart irrigation and energy efficiency through adaptive analytics.'
+    summary: 'Accelerating smart irrigation and energy efficiency through adaptive analytics.',
+    coordinates: { lat: 16.212, lng: 77.3439 }
   },
   {
     name: 'Indian Institute of Information Technology Lucknow',
     shortName: 'IIIT Lucknow',
     slug: 'iiit-lucknow',
     region: 'Lucknow, Uttar Pradesh',
-    summary: 'Empowering fintech and governance with secure, scalable digital platforms.'
+    summary: 'Empowering fintech and governance with secure, scalable digital platforms.',
+    coordinates: { lat: 26.8467, lng: 80.9462 }
   },
   {
     name: 'Indian Institute of Information Technology Allahabad',
     shortName: 'IIIT Allahabad',
     slug: 'iiit-allahabad',
     region: 'Prayagraj, Uttar Pradesh',
-    summary: 'Renowned for computer vision breakthroughs and multi-sensory interaction design.'
+    summary: 'Renowned for computer vision breakthroughs and multi-sensory interaction design.',
+    coordinates: { lat: 25.4358, lng: 81.8463 }
   },
   {
     name: 'Indian Institute of Information Technology Kottayam',
     shortName: 'IIIT Kottayam',
     slug: 'iiit-kottayam',
     region: 'Kottayam, Kerala',
-    summary: 'Bringing marine technology insights and privacy-preserving AI to the hackathon.'
+    summary: 'Bringing marine technology insights and privacy-preserving AI to the hackathon.',
+    coordinates: { lat: 9.5916, lng: 76.5222 }
   },
   {
     name: 'Indian Institute of Information Technology Vadodara',
     shortName: 'IIIT Vadodara',
     slug: 'iiit-vadodara',
     region: 'Vadodara, Gujarat',
-    summary: 'Driving manufacturing intelligence and zero-trust cloud architectures.'
+    summary: 'Driving manufacturing intelligence and zero-trust cloud architectures.',
+    coordinates: { lat: 22.3072, lng: 73.1812 }
   },
   {
     name: 'Indian Institute of Information Technology Kota',
     shortName: 'IIIT Kota',
     slug: 'iiit-kota',
     region: 'Kota, Rajasthan',
-    summary: 'Bridging education-tech and immersive learning for aspirational cities.'
+    summary: 'Bridging education-tech and immersive learning for aspirational cities.',
+    coordinates: { lat: 25.2138, lng: 75.8648 }
   },
   {
     name: 'Indian Institute of Information Technology Sonepat',
     shortName: 'IIIT Sonepat',
     slug: 'iiit-sonepat',
     region: 'Sonepat, Haryana',
-    summary: 'Known for blockchain-led governance pilots and smart campus automation.'
+    summary: 'Known for blockchain-led governance pilots and smart campus automation.',
+    coordinates: { lat: 28.9288, lng: 77.0913 }
   },
   {
     name: 'Indian Institute of Information Technology Bhopal',
     shortName: 'IIIT Bhopal',
     slug: 'iiit-bhopal',
     region: 'Bhopal, Madhya Pradesh',
-    summary: 'Fusing green-tech and ML to reinvent resource planning for tier-2 cities.'
+    summary: 'Fusing green-tech and ML to reinvent resource planning for tier-2 cities.',
+    coordinates: { lat: 23.2599, lng: 77.4126 }
   },
   {
     name: 'Indian Institute of Information Technology Bhagalpur',
     shortName: 'IIIT Bhagalpur',
     slug: 'iiit-bhagalpur',
     region: 'Bhagalpur, Bihar',
-    summary: 'Championing riverine analytics and inclusive fintech enablement.'
+    summary: 'Championing riverine analytics and inclusive fintech enablement.',
+    coordinates: { lat: 25.3476, lng: 86.982 }
   },
   {
     name: 'Indian Institute of Information Technology Agartala',
     shortName: 'IIIT Agartala',
     slug: 'iiit-agartala',
     region: 'Agartala, Tripura',
-    summary: 'Focusing on cross-border commerce and multilingual computing for the northeast.'
+    summary: 'Focusing on cross-border commerce and multilingual computing for the northeast.',
+    coordinates: { lat: 23.8315, lng: 91.2868 }
   },
   {
     name: 'Indian Institute of Information Technology Surat',
     shortName: 'IIIT Surat',
     slug: 'iiit-surat',
     region: 'Surat, Gujarat',
-    summary: 'Delivering high-throughput analytics for textile and logistics ecosystems.'
+    summary: 'Delivering high-throughput analytics for textile and logistics ecosystems.',
+    coordinates: { lat: 21.1702, lng: 72.8311 }
   }
 ];
 
@@ -363,6 +388,7 @@ export const institutes: Institute[] = baseInstitutes.map((inst, index) => {
 
   return {
     ...inst,
+    coordinates: inst.coordinates,
     coordinator,
     spoc,
     teams

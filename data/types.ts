@@ -31,6 +31,10 @@ export type Institute = {
   shortName: string;
   slug: string;
   region: string;
+  coordinates: {
+    lat: number;
+    lng: number;
+  };
   coordinator: Person;
   spoc: Person;
   teams: Team[];
