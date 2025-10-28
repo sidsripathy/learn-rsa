@@ -27,7 +27,7 @@ npm install
 # Start the development server
 npm run dev
 
-# Lint the project
+# Type-check the project
 npm run lint
 
 # Build for production
@@ -77,4 +77,4 @@ All institute and hackathon data lives inside the `data/` folder. Update these T
 
 ## 🧪 Testing
 
-Run `npm run lint` to ensure code quality. Add integration or component tests as required for your deployment pipeline.
+Run `npm run lint` to perform a TypeScript type-check across the codebase. Add integration or component tests as required for your deployment pipeline.
